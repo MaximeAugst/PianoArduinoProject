@@ -18,12 +18,12 @@ Analyse 3
  le son s'arretera une fois relachée.(comme un vrai piano)
  
 Tâche du projet :
-1 Création d'un serveur Web (Java) 
-2 interface du piano
-3 Création de l'algo pour l'arduino & montage maquette
-4 Mise en place de la liaison USB Arduino/PC
-5 Création des requètes
-6 Tests 
+	1 Création d'un serveur Web (Java) 
+	2 interface du piano
+	3 Création de l'algo pour l'arduino & montage maquette
+	4 Mise en place de la liaison USB Arduino/PC
+	5 Création des requètes
+	6 Tests 
 		
 Répartition des tâches : 
 
