@@ -27,7 +27,7 @@ Tâche du projet :
 		
 Répartition des tâches : 
 
-  - Romain Sylvestre = 2, 6
+ 	- Romain Sylvestre = 2, 6
 	- Maxime Augst = 3 
 	- Bastien Planeille = 5, 4
 	- Nicolas Santillana = 1
