@@ -1,0 +1,64 @@
+
+var express = require("express");
+var app = express();
+var http = require("http").Server(app);
+var io = require("socket.io").listen(http);
+
+http.listen(3000);
+
+app.get('/', function(req, res){
+    res.sendFile(__dirname + '/index.html');
+});
+
+io.sockets.on('connection', function(socket){
+    console.log("SOCKET CONNECTED");
+    serialListener(socket);
+});
+
+function serialListener(socket){
+    var SerialPort = require("serialport");
+    var serialPort = new SerialPort("COM4", {
+        baudRate: 9600,
+        parser: SerialPort.parsers.readline('\n')
+    });
+
+    serialPort.on('data', function (data) {
+        console.log("Temperature from arduino : " + data.toString());
+        socket.emit("TEMP-ARDUINO", data.toString());
+        
+        var innerTemperature = parseInt(data.toString());
+        var outsideTemperature = 20;
+        var desiredTemperature = 18;
+
+        // Si la pièce est à la température souhaitée, on éteint le thermostat
+        if (innerTemperature == desiredTemperature) {
+            serialPort.write("0");
+        }
+        // S'il fait trop chaud
+        else if (innerTemperature > desiredTemperature) {
+            // S'il fait froid dehors, on ouvre la fenêtre
+            if (outsideTemperature < desiredTemperature) {
+                serialPort.write("w");
+            }
+            // Sinon on met la climatisation
+            else {
+                serialPort.write("c");
+            }
+        }
+        // S'il fait trop froid
+        else if (innerTemperature < desiredTemperature) {
+            // S'il fait chaud dehors, on ouvre la fenêtre
+            if (outsideTemperature > desiredTemperature) {
+                serialPort.write("w");
+            }
+            else {
+                // Sinon on met le chauffage
+                serialPort.write("h");
+            }
+        }
+    });
+
+    serialPort.on('open', function() {
+        console.log("COM4 Port opened successfully!");
+    });
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Titre affiché dans la barre de titre du navigateur</title>
+	<script src="jquery-3.1.1.min.js"></script>
+	<script src="client.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	Bonjour ceci est une page
+	<div id="keys">
+		<table>
+			<thead><th colspan="7">Mon super piano</th></thead>
+			<tbody>	
+				<tr>
+					<td><button id="do" class="key" onclick="send('do')" >DO</button></td>
+					<td><button id="re" class="key" onclick="send('re')">RE</button></td>
+					<td><button id="mi" class="key" onclick="send('mi')">MI</button></td>
+					<td><button id="fa" class="key" onclick="send('fa')">FA</button></td>
+					<td><button id="sol" class="key" onclick="send('sol')">SOL</button></td>
+					<td><button id="la" class="key" onclick="send('la')">LA</button></td>
+					<td><button id="si"  class="key"onclick="send('si')">SI</button></td>
+				</tr>
+				<tr>
+					<td>S</td>
+					<td>D</td>
+					<td>F</td>
+					<td>G</td>
+					<td>H</td>
+					<td>J</td>
+					<td>K</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+
+</html>

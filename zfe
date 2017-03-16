@@ -1,0 +1,39 @@
+from django.shortcuts import render
+from django.contrib.auth import login as auth_login
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
+from django.contrib.auth.models import User
+from members.forms import AuthenticationForm
+from members.forms import RegistrationForm
+
+
+def index(request):
+
+    messaging_url = "/dashboard/index/" # Are we going to a static template ?
+
+    authentication_form = AuthenticationForm(request, prefix='authentication')
+    registration_form = RegistrationForm(request, prefix='registration')
+    if request.method == "POST":
+        user = None
+        if "login" in request.POST:
+            authentication_form = AuthenticationForm(request, data=request.POST, prefix='authentication')
+            if authentication_form.is_valid():
+                # Okay, security check complete. Get the user.
+                user = authentication_form.get_user()
+        elif "register" in request.POST:
+          registration_form = RegistrationForm(request.POST)
+          if registration_form.is_valid():
+              username = registration_form.cleaned_data['username']
+             # user = User.objects.create_user(username = username)
+              
+
+        if user is not None:
+            auth_login(request, authentication_form.get_user())
+            return HttpResponseRedirect(messaging_url)
+
+    context = {
+        'authentication_form': authentication_form,
+        'registration_form': registration_form,
+    }
+
+    return render(request, "promotion/index.html", context)
