@@ -89,79 +89,85 @@
 #define NOTE_DS8 4978
 
 
-#define noteC4 553
-#define noteC4_ 554
-#define noteD4 587
-#define noteD4_ 622
-#define noteE4 659
-#define noteF4 698
-#define noteF4_ 740
-#define noteG4 784
-#define noteG4_ 831
-#define noteA4 280
-#define noteA4_ 932
-#define noteb4 988
+int sound = 7;
 
-int led = 7;
 void GameOfThrones();
 // the setup routine runs once when you press reset:
 void setup() {                
-  // initialize the digital pin as an output.
+  // initialize the digital pidddddn as an output.
   Serial.begin(9600);
-  pinMode(led, OUTPUT);     
+  pinMode(sound, OUTPUT);     
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
- /* bool toto = false;
-  if (!toto){dfgbhj
-    tone(led, NOTE_C3);
-    toto = true;
-  }*/
   
   if (Serial.available()) {
     char input = Serial.read();
-    digitalWrite(led,HIGH);s
-         tone(led, noteC4);
-          delay(500);
+    
+    if ( input == 's'){
+        GameOfThrones();
     }
     if ( input == 'd'){
-        tone(led, noteC4_);
-        delay(500);
-        //GameOfThrones();
+        tone(sound, NOTE_C4);
+         delay(500);
     }
-    if ( input = 'r'){
-        tone(led, noteD4_);
+    else if ( input == 'r'){
+        Serial.write("r");
+        tone(sound, NOTE_CS4);
         delay(500);
    
     }
-    if ( input == 'f'){
-        tone(led, noteE4);
+    else if ( input == 'f'){
+        tone(sound, NOTE_D4);
         delay(500);
         
     }
-    if ( input == 't'){
-        tone(led, noteF4);
+    else if ( input == 't'){
+        tone(sound, NOTE_DS4);
         delay(500);
     }
-    if ( input == 'g'){
-        tone(led, noteF4_);
+    else if ( input == 'g'){
+        tone(sound, NOTE_E4);
         delay(500);
     }
-    if ( input == 'h'){
-        tone(led, noteG4);
+    else if ( input == 'h'){
+        tone(sound, NOTE_F4);
         delay(500);
     }
-    if ( input == 'j'){
-        tone(led, noteG4_);
+    else if ( input == 'j'){
+        tone(sound, NOTE_G4);
         delay(500);
     }
-    if ( input == 'k'){
-        tone(led, noteA4);
+    else if ( input == 'k'){
+        tone(sound, NOTE_A4);
         delay(500);
     }
+    else if ( input == 'u'){
+        tone(sound, NOTE_FS4);
+        delay(500);
+    }
+    else if ( input == 'i'){
+        tone(sound, NOTE_GS4);
+        delay(500);
+    }
+    else if ( input == 'o'){
+        tone(sound, NOTE_AS4);
+        delay(500);
+       // noTone(sound);
+    }
+    else if ( input == 'l'){
+        tone(sound, NOTE_B4);
+        delay(500);
+       // noTone(sound);
+    }
+    if ( input == 'p'){
+        noTone(sound);
+       
+    }
+    
     else {
-    noTone(led);}
+    noTone(sound);}
   }  // wait for a second
 }
 
@@ -170,159 +176,159 @@ void GameOfThrones()
   {
     for(int i=0; i<4; i++)
     {
-    tone(led, NOTE_G4);
+    tone(sound, NOTE_G4);
     delay(500);
-    noTone(led);
-    tone(led, NOTE_C4);
+    noTone(sound);
+    tone(sound, NOTE_C4);
     delay(500);
-    noTone(led);
-    tone(led, NOTE_DS4);
+    noTone(sound);
+    tone(sound, NOTE_DS4);
     delay(250);
-    noTone(led);
-    tone(led, NOTE_F4);
+    noTone(sound);
+    tone(sound, NOTE_F4);
     delay(250);
-    noTone(led);
+    noTone(sound);
     }
     for(int i=0; i<4; i++)
     {
-    tone(led, NOTE_G4);
+    tone(sound, NOTE_G4);
     delay(500);
-    noTone(led);
-    tone(led, NOTE_C4);
+    noTone(sound);
+    tone(sound, NOTE_C4);
     delay(500);
-    noTone(led);
-    tone(led, NOTE_E4);
+    noTone(sound);
+    tone(sound, NOTE_E4);
     delay(250);
-    noTone(led);
-    tone(led, NOTE_F4);
+    noTone(sound);
+    tone(sound, NOTE_F4);
     delay(250);
-    noTone(led);
+    noTone(sound);
     }
-        tone(led, NOTE_G4);
+        tone(sound, NOTE_G4);
         delay(500);
-        noTone(led);
-        tone(led, NOTE_C4);
+        noTone(sound);
+        tone(sound, NOTE_C4);
         delay(500);
-        tone(led, NOTE_DS4);
+        tone(sound, NOTE_DS4);
         delay(250);
-        noTone(led);
-        tone(led, NOTE_F4);
+        noTone(sound);
+        tone(sound, NOTE_F4);
         delay(250);
-        noTone(led);
-        tone(led, NOTE_D4);
+        noTone(sound);
+        tone(sound, NOTE_D4);
         delay(500);
-        noTone(led);
+        noTone(sound);
     for(int i=0; i<3; i++)
     {
-    tone(led, NOTE_G3);
+    tone(sound, NOTE_G3);
     delay(500);
-    noTone(led);
-    tone(led, NOTE_AS3);
+    noTone(sound);
+    tone(sound, NOTE_AS3);
     delay(250);
-    noTone(led);
-    tone(led, NOTE_C4);
+    noTone(sound);
+    tone(sound, NOTE_C4);
     delay(250);
-    noTone(led);
-    tone(led, NOTE_D4);
+    noTone(sound);
+    tone(sound, NOTE_D4);
     delay(500);
-    noTone(led);
+    noTone(sound);
     }//
-        tone(led, NOTE_G3);
+        tone(sound, NOTE_G3);
         delay(500);
-        noTone(led);
-        tone(led, NOTE_AS3);
+        noTone(sound);
+        tone(sound, NOTE_AS3);
         delay(250);
-        noTone(led);
-        tone(led, NOTE_C4);
+        noTone(sound);
+        tone(sound, NOTE_C4);
         delay(250);
-        noTone(led);
-        tone(led, NOTE_D4);
+        noTone(sound);
+        tone(sound, NOTE_D4);
         delay(1000);
-        noTone(led);
+        noTone(sound);
         
-        tone(led, NOTE_F4);
+        tone(sound, NOTE_F4);
         delay(1000);
-        noTone(led);
-        tone(led, NOTE_AS3);
+        noTone(sound);
+        tone(sound, NOTE_AS3);
         delay(1000);
-        noTone(led);
-        tone(led, NOTE_DS4);
+        noTone(sound);
+        tone(sound, NOTE_DS4);
         delay(250);
-        noTone(led);
-        tone(led, NOTE_D4);
+        noTone(sound);
+        tone(sound, NOTE_D4);
         delay(250);
-        noTone(led);
-        tone(led, NOTE_F4);
+        noTone(sound);
+        tone(sound, NOTE_F4);
         delay(1000);
-        noTone(led);
-        tone(led, NOTE_AS3);
+        noTone(sound);
+        tone(sound, NOTE_AS3);
         delay(1000);
-        noTone(led);
-        tone(led, NOTE_DS4);
+        noTone(sound);
+        tone(sound, NOTE_DS4);
         delay(250);
-        noTone(led);
-        tone(led, NOTE_D4);
+        noTone(sound);
+        tone(sound, NOTE_D4);
         delay(250);
-        noTone(led);
-        tone(led, NOTE_C4);
+        noTone(sound);
+        tone(sound, NOTE_C4);
         delay(500);
-        noTone(led);
+        noTone(sound);
     for(int i=0; i<3; i++)
     {
-    tone(led, NOTE_GS3);
+    tone(sound, NOTE_GS3);
     delay(250);
-    noTone(led);
-    tone(led, NOTE_AS3);
+    noTone(sound);
+    tone(sound, NOTE_AS3);
     delay(250);
-    noTone(led);
-    tone(led, NOTE_C4);
+    noTone(sound);
+    tone(sound, NOTE_C4);
     delay(500);
-    noTone(led);
-    tone(led, NOTE_F3);
+    noTone(sound);
+    tone(sound, NOTE_F3);
     delay(500);
-    noTone(led);
+    noTone(sound);
     }
-          tone(led, NOTE_G4);
+          tone(sound, NOTE_G4);
           delay(1000);
-          noTone(led);
-          tone(led, NOTE_C4);
+          noTone(sound);
+          tone(sound, NOTE_C4);
           delay(1000);
-          noTone(led);
-          tone(led, NOTE_DS4);
+          noTone(sound);
+          tone(sound, NOTE_DS4);
           delay(250);
-          noTone(led);
-          tone(led, NOTE_F4);
+          noTone(sound);
+          tone(sound, NOTE_F4);
           delay(250);
-          noTone(led);
-          tone(led, NOTE_G4);
+          noTone(sound);
+          tone(sound, NOTE_G4);
           delay(1000);
-          noTone(led);
-          tone(led, NOTE_C4);
+          noTone(sound);
+          tone(sound, NOTE_C4);
           delay(1000);
-          noTone(led);
-          tone(led, NOTE_DS4);
+          noTone(sound);
+          tone(sound, NOTE_DS4);
           delay(250);
-          noTone(led);
-          tone(led, NOTE_F4);
+          noTone(sound);
+          tone(sound, NOTE_F4);
           delay(250);
-          noTone(led);
-          tone(led, NOTE_D4);
+          noTone(sound);
+          tone(sound, NOTE_D4);
           delay(500);
-          noTone(led);
+          noTone(sound);
     for(int i=0; i<4; i++)
     {
-    tone(led, NOTE_G3);
+    tone(sound, NOTE_G3);
     delay(500);
-    noTone(led);
-    tone(led, NOTE_AS3);
+    noTone(sound);
+    tone(sound, NOTE_AS3);
     delay(250);
-    noTone(led);
-    tone(led, NOTE_C4);
+    noTone(sound);
+    tone(sound, NOTE_C4);
     delay(250);
-    noTone(led);
-    tone(led, NOTE_D4);
+    noTone(sound);
+    tone(sound, NOTE_D4);
     delay(500);
-    noTone(led);
+    noTone(sound);
     }
 
   }

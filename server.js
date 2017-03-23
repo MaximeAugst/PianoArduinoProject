@@ -44,7 +44,7 @@ server.listen(8080, function listening() {
   console.log('Listening on %d', server.address().port);
 });
  	var SerialPort = require("serialport");
- 	var serialPort = new SerialPort("/dev/ttyACM19", {
+ 	var serialPort = new SerialPort("/dev/ttyACM17", {
  		baudRate: 9600,
  		parser: SerialPort.parsers.readline('\n')
  	});
