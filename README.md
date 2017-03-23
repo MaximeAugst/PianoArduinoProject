@@ -15,11 +15,11 @@ Sur l'interface Web, l'utilisateur pourra jouer du piano via son clavier ou sa s
 le son sera produit par le buzzer relié avec un lien Serial USB.
 
 Analyse :
-  e buzzer sur la carte Arduino jouera la note, tant que l'utilisateur laisse la touche enfoncée, 
+ Le buzzer sur la carte Arduino jouera la note, tant que l'utilisateur laisse la touche enfoncée, 
  le son s'arretera une fois relachée.(comme un vrai piano)
  
 Tâche du projet :
-	- 1 Création d'un serveur Web (WS
+	- 1 Création d'un serveur Web (WS)
 	- 1bis Création d'un serveur HTTP (ExpressJS)
 	- 2 interface du piano
 	- 3 Création de l'algo pour l'arduino & montage maquette
