@@ -36,3 +36,7 @@ Répartition des tâches :
 Fichier :
 	- Script Arduino : sketch_mar03a/sketch_mar03a.ino
 	- Serveur WS/Express : server.js
+
+Branche : 
+	- Master : Piano finis
+	- Clean : Version sans les fichiers inutiles
