@@ -33,10 +33,3 @@ Répartition des tâches :
 	- Bastien Planeille = 5, 4
 	- Nicolas Santillana = 1, 1bis
 
-Fichier :
-	- Script Arduino : sketch_mar03a/sketch_mar03a.ino
-	- Serveur WS/Express : server.js
-
-Branche : 
-	- Master : Piano finis
-	- Clean : Version sans les fichiers inutiles
