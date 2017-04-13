@@ -24,12 +24,12 @@ Tâche du projet :
 	- 2 interface du piano
 	- 3 Création de l'algo pour l'arduino & montage maquette
 	- 4 Mise en place de la liaison USB Arduino/PC
-	- 5 Création des requètes
+	
 		
 Répartition des tâches : 
 
  	- Romain Sylvestre = 2
 	- Maxime Augst = 3 
-	- Bastien Planeille = 5, 4
+	- Bastien Planeille = 4
 	- Nicolas Santillana = 1, 1bis
 
